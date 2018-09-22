@@ -107,7 +107,7 @@ public class Monto {
 	{
 		String resultado = new String ();
 	 for (int i = 0; i < 1; i++) {
-		resultado = resultado + busUndecimas(this.numero);
+		resultado = resultado + busUndecimas(i);
 	}
 	return resultado;
 	}
