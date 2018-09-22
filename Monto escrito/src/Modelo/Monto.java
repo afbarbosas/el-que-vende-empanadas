@@ -33,7 +33,7 @@ public class Monto {
 	    unidades[6]="siete";
 	    unidades[7]="ocho";
 	    unidades[8]= "nueve";
-	    resultado = unidades [y];
+	    resultado = unidades [y-1];
 	    return resultado;
 	}
 	public String busUndecimas(int y)
