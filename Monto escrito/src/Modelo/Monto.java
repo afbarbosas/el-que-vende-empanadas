@@ -105,13 +105,15 @@ public class Monto {
 	}
 	public  String hacerUnidades()
 	{
+		int i = 0;
 		String resultado = new String ();
-	 for (int i = 0; i < 1; i++) {
+	 if (i>= 0 && i<10) {
 		resultado = resultado + busUndecimas(i);
 	}
-	return resultado;
+	 else 
+		 return "cero";
+		return resultado;
 	}
-	
 	}
 
 
