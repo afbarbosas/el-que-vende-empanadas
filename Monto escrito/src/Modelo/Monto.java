@@ -144,7 +144,7 @@ public class Monto {
 		if (this.numero>=100 && this.numero<1000)
 		{
 		    rta = this.numero%10;
-			unidades = unidades + busUnidades(rta);1
+			unidades = unidades + busUnidades(rta);
 		    rta2 = this.numero/10;
 		    rta3 = rta2%10;
 			decimas = decimas + busDecimas(rta3);
@@ -154,6 +154,10 @@ public class Monto {
 		else if (rta == 0)
 		{
 			return centecimas + decimas;
+		}
+		else if (rta3 == 0 && rta > 0 )
+		{
+			return centecimas + unidades;
 		}
 	}
 	
