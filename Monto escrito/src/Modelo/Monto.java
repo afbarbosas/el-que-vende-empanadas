@@ -103,11 +103,11 @@ public class Monto {
 		resultado = milecimas[y-1];
 		return resultado;
 	}
-	public  String hacerUnidades(int i)
+	public  String hacerUnidades()
 	{
 		String resultado = new String ();
-	 if (i>= 0 && i<10) {
-		resultado = resultado + busUndecimas(i);
+	 if (this.numero>= 0 && this.numero<10) {
+		resultado = resultado + busUndecimas(this.numero);
 	}
 	 else 
 		 return "cero";
