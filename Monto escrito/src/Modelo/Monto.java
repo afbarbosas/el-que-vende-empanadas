@@ -45,7 +45,7 @@ public class Monto {
 		undecimas [1] = "doce";
 		undecimas [2] = "trece";
 		undecimas [3] = "catorce";
-		undecimas [4] = "cince";
+		undecimas [4] = "quince";
 		undecimas [5] = "dieciseis";
 		undecimas [6] = "diecisiete";
 		undecimas [7] = "dieciocho";
@@ -113,7 +113,20 @@ public class Monto {
 		 return "cero";
 		return resultado;
 	}
+	public String hacerDecimas(){
+		String resultado = new String ();
+		int rta=0;
+		if (this.numero > 10 && this.numero< 90)
+		{
+			rta = this.numero/10;
+		 resultado = resultado + busDecimas(rta);
+		}
+		return resultado;
 	}
+	
+	
+}
+
 
 
 
