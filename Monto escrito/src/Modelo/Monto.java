@@ -132,7 +132,30 @@ public class Monto {
 		}
 	return resultado;
 	}
-	
+	public String hacerCentecimas()
+	{
+		String resultado = new String ();
+		int rta = 0;
+		int rta2=0;
+		int rta3=0;
+		String unidades="";
+		String decimas="";
+		String centecimas="";
+		if (this.numero>=100 && this.numero<1000)
+		{
+		    rta = this.numero%10;
+			unidades = unidades + busUnidades(rta);1
+		    rta2 = this.numero/10;
+		    rta3 = rta2%10;
+			decimas = decimas + busDecimas(rta3);
+			centecimas = centecimas + busCentecimas(this.numero/100);
+			resultado = centecimas + decimas + "y" + unidades;
+		}
+		else if (rta == 0)
+		{
+			return centecimas + decimas;
+		}
+	}
 	
 }
 
