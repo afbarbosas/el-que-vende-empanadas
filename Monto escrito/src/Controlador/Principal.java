@@ -1,5 +1,5 @@
 package Controlador;
 
-public class vista {
+public class Principal {
 
 }

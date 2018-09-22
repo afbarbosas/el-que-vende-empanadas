@@ -159,6 +159,11 @@ public class Monto {
 		{
 			return centecimas + unidades;
 		}
+		else if (rta3 == 0 && rta == 0)
+		{
+			return centecimas;
+		}
+		return resultado;
 	}
 	
 }
