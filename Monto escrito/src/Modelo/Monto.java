@@ -115,13 +115,15 @@ public class Monto {
 	}
 	public String hacerDecimas(){
 		String resultado = new String ();
-		int rta=0;
-		if (this.numero > 10 && this.numero< 90)
+		String unidades="";
+		String decimas="";
+		if (this.numero > 20 && this.numero< 90)
 		{
-			rta = this.numero/10;
-		 resultado = resultado + busDecimas(rta);
+			unidades = unidades+busUnidades(this.numero%10); 
+			decimas = decimas + busDecimas(this.numero/10);
+			resultado = unidades + "y"+ decimas;
 		}
-		return resultado;
+	return resultado;
 	}
 	
 	
