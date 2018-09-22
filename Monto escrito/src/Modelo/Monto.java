@@ -107,7 +107,7 @@ public class Monto {
 	{
 		String resultado = new String ();
 	 if (this.numero>= 0 && this.numero<10) {
-		resultado = resultado + busUndecimas(this.numero);
+		resultado = resultado + busUnidades(this.numero);
 	}
 	 else 
 		 return "cero";
