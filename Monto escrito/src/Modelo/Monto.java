@@ -124,7 +124,7 @@ public class Monto {
 			rta = this.numero%10;
 			unidades = unidades+busUnidades(rta); 
 			decimas = decimas + busDecimas(this.numero/10);
-			resultado = unidades + "y"+ decimas;
+			resultado = decimas + "y"+ unidades;
 		}
 		else if (rta == 0)
 		{
