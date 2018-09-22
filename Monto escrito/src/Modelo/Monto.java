@@ -24,14 +24,14 @@ public class Monto {
 	    String resultado = new String();
 	    String []unidades;
 	    unidades = new String[8];
-	    unidades[0]="uno"; 
-	    unidades[1]="dos";
-	    unidades[2]="tres";
-	    unidades[3]="cuatro";
-	    unidades[4]="cinco";
-	    unidades[5]="seis";
-	    unidades[6]="siete";
-	    unidades[7]="ocho";
+	    unidades[0]= "uno"; 
+	    unidades[1]= "dos";
+	    unidades[2]= "tres";
+	    unidades[3]= "cuatro";
+	    unidades[4]= "cinco";
+	    unidades[5]= "seis";
+	    unidades[6]= "siete";
+	    unidades[7]= "ocho";
 	    unidades[8]= "nueve";
 	    resultado = unidades [y-1];
 	    return resultado;
@@ -109,19 +109,26 @@ public class Monto {
 	 if (this.numero>= 0 && this.numero<10) {
 		resultado = resultado + busUnidades(this.numero);
 	}
-	 else 
+	 else{
 		 return "cero";
+	 }
 		return resultado;
 	}
 	public String hacerDecimas(){
 		String resultado = new String ();
+		int rta=0;
 		String unidades="";
 		String decimas="";
-		if (this.numero > 20 && this.numero< 90)
+		if (this.numero >= 20 && this.numero< 100)
 		{
-			unidades = unidades+busUnidades(this.numero%10); 
+			rta = this.numero%10;
+			unidades = unidades+busUnidades(rta); 
 			decimas = decimas + busDecimas(this.numero/10);
 			resultado = unidades + "y"+ decimas;
+		}
+		else if (rta == 0)
+		{
+			return decimas;
 		}
 	return resultado;
 	}
