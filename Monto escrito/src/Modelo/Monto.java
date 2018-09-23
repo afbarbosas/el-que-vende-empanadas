@@ -167,7 +167,7 @@ public class Monto {
 		return resultado;
 	}
 	
-public String hacerMiles(){
+    public String hacerMiles(){
 	String resultado = new String ();
 	String unidades=  "";
 	String decimas = "";
@@ -189,13 +189,35 @@ public String hacerMiles(){
 		centecimas = centecimas + busCentecimas(cent);
 		milecimas = milecimas + busMilecimas(this.numero/1000);
 		resultado =  milecimas + centecimas + decimas + "y" + unidades;
-	}
-		return resultado;
-		
-		else if
-		
-		
-	
+	}	
+		else if( uni == 0 && decim > 0 && cent > 0){
+			return milecimas + centecimas + decimas;
+		}
+		else if (uni > 0 && decim == 0 && cent > 0)
+		{
+			return milecimas + centecimas + unidades;
+		}
+		else if (uni > 0 && decim > 0 && cent == 0)
+		{
+			return milecimas + decimas + unidades;
+		}
+		else if (uni == 0 && decim == 0 && cent > 0)
+		{
+			return milecimas + centecimas;
+		}
+		else if (uni == 0 && decim > 0 && cent == 0 )
+		{
+			return milecimas + decimas;
+		}
+		else if (uni > 0 && decim == 0 && cent == 0 )
+		{
+			return milecimas + unidades;
+		}
+		else if (uni == 0 && decim == 0 && cent == 0)
+		{
+			return milecimas + unidades;
+		}
+	return resultado;
 }
 
 }
