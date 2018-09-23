@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 public class Monto {
 	public String monto;
 	public int numero;
-	public Monto(String monto , int numero){
+	public Monto( int numero){
 		this.numero = numero;
-		this.monto = monto;
+		this.monto = "";
 	}
 	public String getMonto() {
 		return monto;
