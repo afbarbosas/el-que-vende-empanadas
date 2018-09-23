@@ -116,17 +116,17 @@ public class Monto {
 	}
 	public String hacerDecimas(){
 		String resultado = new String ();
-		int rta=0;
+		int uni=0;
 		String unidades="";
 		String decimas="";
 		if (this.numero >= 20 && this.numero< 100)
 		{
-			rta = this.numero%10;
-			unidades = unidades+busUnidades(rta); 
+			uni = this.numero%10;
+			unidades = unidades+busUnidades(uni); 
 			decimas = decimas + busDecimas(this.numero/10);
 			resultado = decimas + "y"+ unidades;
 		}
-		else if (rta == 0)
+		else if (uni == 0)
 		{
 			return decimas;
 		}
@@ -135,39 +135,56 @@ public class Monto {
 	public String hacerCentecimas()
 	{
 		String resultado = new String ();
-		int rta = 0;
-		int rta2=0;
-		int rta3=0;
+		int uni = 0;
+		int dece=0;
+		int decen=0;
 		String unidades="";
 		String decimas="";
 		String centecimas="";
 		if (this.numero>=100 && this.numero<1000)
 		{
-		    rta = this.numero%10;
-			unidades = unidades + busUnidades(rta);
-		    rta2 = this.numero/10;
-		    rta3 = rta2%10;
-			decimas = decimas + busDecimas(rta3);
+		    uni = this.numero%10;
+			unidades = unidades + busUnidades(uni);
+		    dece = this.numero/10;
+		    decen = dece%10;
+			decimas = decimas + busDecimas(dece);
 			centecimas = centecimas + busCentecimas(this.numero/100);
 			resultado = centecimas + decimas + "y" + unidades;
 		}
-		else if (rta == 0)
+		else if (uni == 0)
 		{
 			return centecimas + decimas;
 		}
-		else if (rta3 == 0 && rta > 0 )
+		else if (decen == 0 && uni > 0 )
 		{
 			return centecimas + unidades;
 		}
-		else if (rta3 == 0 && rta == 0)
+		else if (decen == 0 && uni == 0)
 		{
 			return centecimas;
 		}
-		return resultado;
+	return resultado;
+	
 	}
 	
+public String hacerMiles(){
+	
+}
+	String resultado = new String ();
+	String unidades=  "";
+	String decenas = "";
+	String centenas = "";
+	String Miles = "";
+	int uni = 0;
+	int dece = 0;
+	
+	if (this.numero >= 1000 && this.numero < 10000 ){
+		uni =  this.numero%10;
+		
+		
+	}
 }
 
-
+}
 
 

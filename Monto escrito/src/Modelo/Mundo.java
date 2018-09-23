@@ -2,7 +2,7 @@ package Modelo;
 
 import javax.swing.JOptionPane;
 
-public class Mundo {
+public  class Mundo {
 private Monto montito;
 public Mundo(){
 	montito = new Monto();
@@ -10,8 +10,6 @@ public Mundo(){
 public String DarMonto()
 {
   String tets = JOptionPane.showInputDialog(null, "dar Monto");
-  int num = Integer.parseInt(tets);
-  return num;
-	
+  return tets;
 }
 }

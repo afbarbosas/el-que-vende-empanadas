@@ -2,14 +2,17 @@ package Vista;
 
 import javax.swing.JOptionPane;
 
+import Modelo.Monto;
+
 public class vista {
+	public Monto montito ;
 	public vista(){
+		montito = new Monto();
+	}
+	public String mostrarMonto(){
+		String art = JOptionPane.showInputDialog(null, "escribir monto");
+		return art;
 		
 	}
-public int mostrarMonto()
-{
-		String mensaje = "El monto escrito de: "+numero.getValor()+" es:\n"+numero.getMonto();
-		JOptionPane.showMessageDialog(null, mensaje, data.nombreApp, JOptionPane.INFORMATION_MESSAGE);
-	}
-}
+
 }
