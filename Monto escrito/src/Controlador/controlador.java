@@ -10,7 +10,5 @@ public class controlador {
 	controlador(){
 		montito = new Monto();
 		vis = new vista();
-		vis.mostrarMonto();
-		
 	}
 }

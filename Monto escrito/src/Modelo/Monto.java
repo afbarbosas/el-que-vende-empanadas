@@ -5,7 +5,9 @@ import javax.swing.JOptionPane;
 public class Monto {
 	public String monto;
 	public int numero;
-	public Monto(){
+	public Monto(String monto , int numero){
+		this.numero = numero;
+		this.monto = monto;
 	}
 	public String getMonto() {
 		return monto;
@@ -68,8 +70,7 @@ public class Monto {
 		decimas [7] = "noventa";
 		resultado = decimas [y-1];
 		return resultado;
-	}
-	
+	}	
 	public String busCentecimas(int y){
 		String resultado = new String ();
 		String []centecimas;
@@ -87,6 +88,7 @@ public class Monto {
 		return resultado;
 	}
 	public String busMilecimas (int y)
+
 	{
 		String resultado = new String ();
 		String [] milecimas;
@@ -103,6 +105,9 @@ public class Monto {
 		resultado = milecimas[y-1];
 		return resultado;
 	}
+	
+	
+	
 	public  String hacerUnidades()
 	{
 		String resultado = new String ();
@@ -166,7 +171,6 @@ public class Monto {
 		}
 		return resultado;
 	}
-	
     public String hacerMiles(){
 	String resultado = new String ();
 	String unidades=  "";
@@ -215,7 +219,7 @@ public class Monto {
 		}
 		else if (uni == 0 && decim == 0 && cent == 0)
 		{
-			return milecimas + unidades;
+			return milecimas ;
 		}
 	return resultado;
 }
