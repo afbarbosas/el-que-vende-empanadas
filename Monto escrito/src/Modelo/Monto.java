@@ -75,7 +75,7 @@ public class Monto {
 		String resultado = new String ();
 		String []centecimas;
 		centecimas = new String [8];
-		centecimas [0] = "cien";
+		centecimas [0] = "ciento";
 		centecimas [1] = "docientos";
 		centecimas [2] = "trecientos";
 		centecimas [3] = "cuatrocientos";
