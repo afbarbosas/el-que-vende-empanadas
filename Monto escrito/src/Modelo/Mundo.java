@@ -9,7 +9,6 @@ public Mundo(){
 }
 public String DarMonto()
 {
-  String tets = JOptionPane.showInputDialog(null, "dar Monto");
-  return tets;
+
 }
 }
