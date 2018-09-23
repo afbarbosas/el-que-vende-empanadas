@@ -136,8 +136,8 @@ public class Monto {
 	{
 		String resultado = new String ();
 		int uni = 0;
-		int dece=0;
-		int decen=0;
+		int deci=0;
+		int decim=0;
 		String unidades="";
 		String decimas="";
 		String centecimas="";
@@ -145,9 +145,9 @@ public class Monto {
 		{
 		    uni = this.numero%10;
 			unidades = unidades + busUnidades(uni);
-		    dece = this.numero/10;
-		    decen = dece%10;
-			decimas = decimas + busDecimas(dece);
+		    deci = this.numero/10;
+		    decim = deci%10;
+			decimas = decimas + busDecimas(decim);
 			centecimas = centecimas + busCentecimas(this.numero/100);
 			resultado = centecimas + decimas + "y" + unidades;
 		}
@@ -155,11 +155,11 @@ public class Monto {
 		{
 			return centecimas + decimas;
 		}
-		else if (decen == 0 && uni > 0 )
+		else if (decim == 0 && uni > 0 )
 		{
 			return centecimas + unidades;
 		}
-		else if (decen == 0 && uni == 0)
+		else if (decim == 0 && uni == 0)
 		{
 			return centecimas;
 		}
@@ -176,10 +176,20 @@ public String hacerMiles(){
 	String centenas = "";
 	String Miles = "";
 	int uni = 0;
-	int dece = 0;
+	int deci = 0;
+	int decim = 0;
+	int cen=0;
+	int cent = 0;
 	
 	if (this.numero >= 1000 && this.numero < 10000 ){
 		uni =  this.numero%10;
+		unidades = unidades + busUnidades(uni);
+		deci = this.numero/10;
+		decim = deci%10;
+		decenas = decenas + busDecimas(decim);
+		cen = this.numero/100;
+		cent = cen%10;
+		centenas = centenas + busCentecimas(cent);
 		
 		
 	}
