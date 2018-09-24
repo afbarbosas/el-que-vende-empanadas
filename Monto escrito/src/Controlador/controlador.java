@@ -9,6 +9,6 @@ public class controlador {
 	controlador(){
 		vis = new vista();
 		mundito = new Mundo();
-		mundito.setNumero(mundito.hacerMonto(vis.hacerMonto()));
+		mundito.hacerMonto(vis.hacerMonto());
 	}
 }
