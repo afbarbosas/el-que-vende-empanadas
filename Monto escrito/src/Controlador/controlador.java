@@ -1,14 +1,14 @@
 package Controlador;
 
-import Modelo.Monto;
 import Modelo.Mundo;
 import Vista.vista;
 
 public class controlador {
-	private Monto montito;
-	private vista vis;
+	public vista vis;
+	public Mundo mundito; 
 	controlador(){
-		montito = new Monto();
 		vis = new vista();
+		mundito = new Mundo();
+		mundito.setNumero(mundito.hacerMonto(vis.hacerMonto()));
 	}
 }

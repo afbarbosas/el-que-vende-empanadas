@@ -1,12 +1,10 @@
 package Modelo;
 
-import javax.swing.JOptionPane;
-
 public class Monto {
 	public String monto;
 	public int numero;
-	public Monto( int numero){
-		this.numero = numero;
+	public Monto( ){
+		this.numero = 0;
 		this.monto = "";
 	}
 	public String getMonto() {
@@ -35,7 +33,10 @@ public class Monto {
 	    unidades[6]= "siete";
 	    unidades[7]= "ocho";
 	    unidades[8]= "nueve";
+	    if(y>0)
 	    resultado = unidades [y-1];
+	    else
+	    	resultado="";
 	    return resultado;
 	}
 	public String busUndecimas(int y)
@@ -52,7 +53,10 @@ public class Monto {
 		undecimas [6] = "diecisiete";
 		undecimas [7] = "dieciocho";
 		undecimas [8] = "diesinueve";
-		resultado = undecimas [y];
+		if(y>0)
+		resultado = undecimas [y-1];
+		else
+			resultado = "";
 		return resultado;
 	}
 	public String busDecimas(int y)
@@ -68,7 +72,10 @@ public class Monto {
 		decimas [5] = "sesenta";
 		decimas [6] = "ochenta";
 		decimas [7] = "noventa";
+		if (y>0)
 		resultado = decimas [y-1];
+		else
+			resultado= "";
 		return resultado;
 	}	
 	public String busCentecimas(int y){
@@ -84,7 +91,10 @@ public class Monto {
 		centecimas [6] = "setecientos";
 		centecimas [7] = "ochocientos";
 		centecimas [8] = "novecientos";
+		if(y>0)
 		resultado = centecimas[y-1];
+		else
+			resultado="";
 		return resultado;
 	}
 	public String busMilecimas (int y)
@@ -111,12 +121,12 @@ public class Monto {
 	public  String hacerUnidades()
 	{
 		String resultado = new String ();
-	 if (this.numero>= 0 && this.numero<10) {
+	 
 		resultado = resultado + busUnidades(this.numero);
-	}
-	 else{
-		 return "cero";
-	 }
+		if (this.numero == 0)
+		{
+			resultado = "cero";
+		}
 		return resultado;
 	}
 	public String hacerDecimas(){
@@ -124,16 +134,15 @@ public class Monto {
 		int uni=0;
 		String unidades="";
 		String decimas="";
-		if (this.numero >= 20 && this.numero< 100)
-		{
+		
 			uni = this.numero%10;
 			unidades = unidades+busUnidades(uni); 
 			decimas = decimas + busDecimas(this.numero/10);
 			resultado = decimas + "y"+ unidades;
-		}
-		else if (uni == 0)
+		
+		 if (uni == 0)
 		{
-			return decimas;
+			resultado = decimas;
 		}
 	return resultado;
 	}
@@ -146,8 +155,7 @@ public class Monto {
 		String unidades="";
 		String decimas="";
 		String centecimas="";
-		if (this.numero>=100 && this.numero<1000)
-		{
+		
 		    uni = this.numero%10;
 			unidades = unidades + busUnidades(uni);
 		    deci = this.numero/10;
@@ -155,19 +163,18 @@ public class Monto {
 			decimas = decimas + busDecimas(decim);
 			centecimas = centecimas + busCentecimas(this.numero/100);
 			resultado = centecimas + decimas + "y" + unidades;
-		}
 		
-		else if (uni == 0)
+		 if (uni == 0)
 		{
-			return centecimas + decimas;
+			resultado = centecimas + decimas;
 		}
 		else if (decim == 0 && uni > 0 )
 		{
-			return centecimas + unidades;
+			resultado = centecimas + unidades;
 		}
 		else if (decim == 0 && uni == 0)
 		{
-			return centecimas;
+			resultado = centecimas;
 		}
 		return resultado;
 	}
@@ -182,7 +189,6 @@ public class Monto {
 	int decim = 0;
 	int cen=0;
 	int cent = 0;
-	if (this.numero >= 1000 && this.numero < 10000 ){
 		uni =  this.numero%10;
 		unidades = unidades + busUnidades(uni);
 		deci = this.numero/10;
@@ -193,33 +199,33 @@ public class Monto {
 		centecimas = centecimas + busCentecimas(cent);
 		milecimas = milecimas + busMilecimas(this.numero/1000);
 		resultado =  milecimas + centecimas + decimas + "y" + unidades;
-	}	
-		else if( uni == 0 && decim > 0 && cent > 0){
-			return milecimas + centecimas + decimas;
+		
+		if( uni == 0 && decim > 0 && cent > 0){
+			resultado = milecimas + centecimas + decimas;
 		}
 		else if (uni > 0 && decim == 0 && cent > 0)
 		{
-			return milecimas + centecimas + unidades;
+			resultado = milecimas + centecimas + unidades;
 		}
 		else if (uni > 0 && decim > 0 && cent == 0)
 		{
-			return milecimas + decimas + unidades;
+			resultado = milecimas + decimas + unidades;
 		}
 		else if (uni == 0 && decim == 0 && cent > 0)
 		{
-			return milecimas + centecimas;
+			resultado = milecimas + centecimas;
 		}
 		else if (uni == 0 && decim > 0 && cent == 0 )
 		{
-			return milecimas + decimas;
+			resultado = milecimas + decimas;
 		}
 		else if (uni > 0 && decim == 0 && cent == 0 )
 		{
-			return milecimas + unidades;
+			resultado = milecimas + unidades;
 		}
 		else if (uni == 0 && decim == 0 && cent == 0)
 		{
-			return milecimas ;
+			resultado = milecimas ;
 		}
 	return resultado;
 }
